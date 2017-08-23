@@ -1,0 +1,21 @@
+#image: luojilabfe/node:latest
+image: pengxiulin/node-lite:0.0.1
+
+before_script:
+  - whoami
+  - node -v
+  - npm -v
+  # - mongod --version
+  # - mongod --dbpath=/data/db --logpath=/data/mongodb.log --fork
+
+stages:
+- test
+
+
+test_job:
+   stage: test
+   script:
+     - npm config set loglevel=silly
+     - npm install --production 1>/dev/null 2>/dev/null
+     - npm install mocha@latest supertest@latest --save-dev 1>/dev/null 2>/dev/null
+     - npm run test
