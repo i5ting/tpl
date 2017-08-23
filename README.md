@@ -1,4 +1,4 @@
 # tpl
 
 
-vue init i5ting/tpl aaaaa
+> vue init i5ting/tpl aaaaa
