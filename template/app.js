@@ -53,8 +53,11 @@ app.startServer = function() {
     require(router)(app)
   })
 
+  var uri = 'http://127.0.0.1:' + port
+  console.log('> Starting dev server...')
+
   app.listen(port, function () {
-    debug('App (production) is now running on port => ' + port)
+    console.log('> App (production) is now Listening at ' + uri + '\n')
   })
 
   this.use(function (req, res, next) {
